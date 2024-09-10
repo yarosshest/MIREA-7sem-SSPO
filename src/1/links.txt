@@ -1,0 +1,20 @@
+1 таблица
+
+ISO/IEC 23894:2023 https://www.iso.org/standard/77304.html
+ISO/IEC 27017:2015 https://www.iso.org/standard/43757.html
+
+ISO 31000:2018 https://www.iso.org/standard/75652.html
+ISO/IEC 27002:2022 https://www.iso.org/standard/75652.html
+
+2 таблица
+
+ГОСТ Р 34.11-2012
+https://protect.gost.ru/document.aspx?control=7&id=180209
+ГОСТ Р 34.30-93
+https://www.rst.gov.ru/portal/gost/home/standarts/catalognational?portal:componentId=3503536e-2ac1-4753-8ed1-09a92fee02de&portal:isSecure=false&portal:portletMode=view&navigationalstate=JBPNS_rO0ABXdPAAplbnRpdHlOYW1lAAAAAQALRE9DVU1FTlRfMTEABmFjdGlvbgAAAAEABnNlYXJjaAAIZW50aXR5SWQAAAABAAUxNDE4MQAHX19FT0ZfXw**
+https://files.stroyinf.ru/Index2/1/4294820/4294820310.htm
+
+ИСО  4902:1989
+https://www.iso.org/ru/standard/10921.html
+
+https://www.rst.gov.ru/portal/gost/home/standarts/cataloginter?portal:componentId=26cba537-adcd-44ed-9a44-72c63a7c7bc2&portal:isSecure=false&portal:portletMode=view&navigationalstate=JBPNS_rO0ABXdPAAplbnRpdHlOYW1lAAAAAQALRE9DVU1FTlRfMzUABmFjdGlvbgAAAAEABnNlYXJjaAAIZW50aXR5SWQAAAABAAUyNzYxMAAHX19FT0ZfXw**
