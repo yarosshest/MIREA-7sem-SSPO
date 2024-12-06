@@ -1,0 +1,26 @@
+\documentclass[14pt,a4paper,oneside]{extarticle}
+
+\usepackage{./res/style}
+\graphicspath{{./img/}} % path to graphics
+
+\date{\today}
+
+\begin{document}
+\renewcommand{\figurename}{Рисунок}
+\renewcommand{\contentsname}{Содержание}
+\renewcommand{\bibname}{Список литературы}
+
+    \include{title}
+    \tableofcontents
+
+    \clearpage
+
+    \include{main_data}
+    \include{models-layers-list}
+    \include{architect}
+    \include{funck}
+    \include{input-output}
+    \include{treb}
+
+
+\end{document}

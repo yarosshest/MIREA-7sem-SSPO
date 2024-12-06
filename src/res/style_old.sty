@@ -24,31 +24,19 @@
 % PAGE SETTINGS
 % ----------------------------------------------------------------------------
 
-\usepackage[left=3cm, right=1cm, vmargin=2cm, headheight=2cm]{geometry}
+\usepackage[left=3cm, right=1.5cm, vmargin=2cm, headheight=2cm]{geometry}
 \linespread{1.5} % line spacing 1.5
 \usepackage{indentfirst} % indent first paragraph
-\setlength{\parindent}{1.25cm} % left indent 1.25 cm
+\setlength{\parindent}{1.25cm}
 \sloppy
 
 \frenchspacing % ???
-
 \pagestyle{plain}
-
 \usepackage{fancyhdr} % for headers and footers
 
 % Ban dangling lines (ban single lines on a page)
 \clubpenalty=10000
 \widowpenalty=10000
-
-% ----------------------------------------------------------------------------
-% COUNTERS SETTINGS
-% ----------------------------------------------------------------------------
-
-\usepackage[figure,table,xspace]{totalcount}
-% add
-% \totalfigures
-% \totaltables
-% \listoffigures - list of figures
 
 % ----------------------------------------------------------------------------
 % ATTACHMENTS SETTINGS
@@ -77,7 +65,7 @@
 }
 
 % for non-end-to-end numbering
-\usepackage{chngcntr}
+%\usepackage{chngcntr}
 %\counterwithin{figure}{section}
 %\counterwithin{table}{section}
 
@@ -118,6 +106,12 @@
     extendedchars=true,
 	breakautoindent=true,
 }
+
+% ----------------------------------------------------------------------------
+% COLOR SETTINGS
+% ----------------------------------------------------------------------------
+
+\usepackage{color}
 
 % ----------------------------------------------------------------------------
 % HYPERREF SETTINGS
@@ -163,45 +157,22 @@
 % ----------------------------------------------------------------------------
 
 \usepackage{titlesec}
-\usepackage{etoolbox} % Header separator on a new page
-\usepackage{needspace} % Parameter to prevent a gap between the title and the next paragraph
 
-\titleformat{\chapter}[block]
-  {\bfseries\fontsize{18pt}{20pt}\selectfont} % Bold, size 18pt
-  {\thechapter}{1em}{\MakeUppercase} % numbering, indentation and uppercase 
-
+% section size
 \titleformat{\section}[block]
-  {\bfseries\fontsize{16pt}{18pt}\selectfont} % Bold, size 16pt
-  {\thesection}{1em}{}
-
+  {\bfseries\fontsize{18pt}{20pt}\selectfont} % Bold, size 18pt
+  {\thesection}{1em}{} % numbering, indentation and uppercase 
 \titleformat{\subsection}[block]
-  {\bfseries}
-  {\thesubsection}{1em}{}
-
+	{\fontsize{16pt}{20pt}\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[block]
-  {\bfseries}
-  {\thesubsubsection}{1em}{}
+	{\fontsize{14pt}{18pt}\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\paragraph}[block]
+	{\fontsize{14pt}{18pt}\bfseries}{}{1em}{}
 
-% Customizing indents and spacing
-\titlespacing*{\chapter}
-  {\parindent}{0pt}{10pt} % Left indent 1.25 cm, spacing before 15pt, after 10pt
-\titlespacing*{\section}
-  {\parindent}{15pt}{10pt}
-\titlespacing*{\subsection}
-  {\parindent}{15pt}{10pt}
-\titlespacing*{\subsubsection}
-  {\parindent}{15pt}{10pt}
-
-% Header separator on a new page.
-% Each new CHAPTER starts on a new page.
-\preto\chapter{\clearpage}
-
-% Prevent title and text breaks
-% Do not break off the title from the following text
-\preto\chapter{\needspace{5\baselineskip}}
-\preto\section{\needspace{5\baselineskip}}
-\preto\subsection{\needspace{5\baselineskip}}
-\preto\subsubsection{\needspace{5\baselineskip}}
+\titlespacing*{\section}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsection}{\parindent}{0pt}{0pt}
+\titlespacing*{\subsubsection}{\parindent}{0pt}{0pt}
+\titlespacing*{\paragraph}{\parindent}{0pt}{0pt}
 
 % ----------------------------------------------------------------------------
 % TABLE OF CONTENTS
@@ -212,50 +183,18 @@
 \setlength{\cftbeforetoctitleskip}{1.5em}
 \setlength{\cftaftertoctitleskip}{1em}
 
-%\renewcommand{\cfttoctitlefont}
-	%{\bfseries\fontsize{18pt}{20pt}\selectfont\MakeUppercase}
-\renewcommand{\cfttoctitlefont}
-	{\hfill\bfseries\fontsize{18pt}{20pt}\selectfont\MakeUppercase}
+\renewcommand{\cfttoctitlefont}{\hfill\Large}
 \renewcommand{\cftaftertoctitle}{\hfill\hfill}
 
 \renewcommand{\cftbeforesecskip}{0pt}
 
-\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
-
-%\renewcommand{\cftchapfont}{\normalfont}
-%\renewcommand{\cftsecfont}{\normalfont}
-
-% ----------------------------------------------------------------------------
-% BIBLIOGRAPHY
-%
-% Install in Linux
-% exec				mkdir -p ~/texmf/tex/latex
-% load archive from	https://www.ctan.org/pkg/biblatex-gost
-% unzip to			~/texmf/tex/latex/<biblatex-gost>
-% exec				texhash ~/texmf
-% 
-% ----------------------------------------------------------------------------
-
-\usepackage[
-	parentracker=true,
-	backend=biber,
-	hyperref=false,
-	bibencoding=utf8,
-	style=gost-numeric,
-	language=auto,
-	autolang=other,
-	%citestyle=gost-numeric,
-	%bibstyle=gost-numeric,
-	sorting=none,  % entries are processed in citation order
-	]{biblatex}
 
 % ----------------------------------------------------------------------------
 % NEW COMMAND
 % ----------------------------------------------------------------------------
 
-% text substitutions
 \newcommand{\conttable}[1]{\caption*{\leftline{Продолжение Таблицы~\ref{#1}}}}
 \newcommand{\rref}[1]{(Рисунок~\ref{#1})}
 \newcommand{\rdref}[2]{(Рисунки~\ref{#1}\,-\,\ref{#2})}
@@ -264,7 +203,6 @@
 \newcommand{\lref}[1]{(Листинг~\ref{#1})}
 \newcommand{\ldref}[2]{(Листинги~\ref{#1}\,-\,\ref{#2})}
 
-% figure environment and command
 \newenvironment{image}{
 	\begin{figure}[h!tp]
 	\centering
@@ -273,42 +211,6 @@
 }
 \newcommand\includegrph[2][width=0.8\textwidth]{\includegraphics[#1]{#2}}
 
-% appendix
-\let\oldappendix\appendix % save old \appendix
-\usepackage{alphalph} % for \Asbuk
-\renewcommand{\appendix}{
-    \oldappendix
-    \renewcommand{\thechapter}{\Asbuk{chapter}}
-}
-\newcommand\achapter[1]{
-	\refstepcounter{chapter}
-	\chapter*{\textbf{\appendixname\;\thechapter} \\ \raggedright #1}
-	\label{chap:#1}
-	\addcontentsline{toc}{section}{\appendixname~\thechapter\ ---\ #1}
-	%\addcontentsline{toc}{chapter}{\appendixname~\thechapter\ ---\ #1}
-}
-\newcommand\asection[1]{
-	\refstepcounter{section}
-	\section*{\textbf{\thesection} \raggedright #1}
-}
-\newcommand\asubsection[1]{
-	\refstepcounter{subsection}
-	\section*{\textbf{\thesubsection} \raggedright #1}
-}
-\newcommand\asubsubsection[1]{
-	\refstepcounter{subsubsection}
-	\section*{\textbf{\thesubsubsection} \raggedright #1}
-}
-
-
-%\usepackage{totcount}
-%\regtotcounter{appendixcounter} 
-\newcommand{\appendixitem}[1]{
-	%\refstepcounter{appendixcounter}
-    \appendixname~\ref{chap:#1} --- #1 \par
-}
-
-% other commands
 \providecommand{\No}{\textnumero}
 \newcommand{\rarrow}{$\rightarrow$}
 
